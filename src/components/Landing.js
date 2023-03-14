@@ -68,7 +68,7 @@ export default function Landing() {
               <Button variant="contained" color='success' sx={{ marginTop: '15px', color: '#fff' }}>
                <Link
                 variant="contained"
-                href=''
+                href='/listings'
                 sx={{ color: '#fff'}}
               >
                 Go
