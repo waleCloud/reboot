@@ -11,7 +11,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
-import { Grid, Slider } from '@mui/material';
+import { Autocomplete, CardMedia, FormControl, Grid, MenuItem, Select, Slider, TextField } from '@mui/material';
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
@@ -26,11 +26,92 @@ function SimpleDialog(props) {
     onClose(value);
   };
 
+  const carKind = [
+    { label: 'Electric car', value: 1 },
+    { label: 'Hybrid car',  value: 2  },
+    { label: 'Fuel car',  value: 3 },
+    { label: 'Diesel car',  value: 4 },
+  ];
+
+  const carPurpose = [
+    { label: 'Family car', value: 1 },
+    { label: 'Sports car',  value: 2  },
+    { label: 'everyday use',  value: 3 },
+    { label: 'weekend use',  value: 4 },
+    { label: 'Holiday van',  value: 4 },
+    { label: 'Others',  value: 4 },
+  ];
+
+  const carBrand = [
+    { label: 'BMW', value: 1 },
+    { label: 'Tesla model S',  value: 2  },
+    { label: 'Volvo',  value: 3 },
+    { label: 'Ford',  value: 4 },
+    { label: 'Renault',  value: 4 },
+    { label: 'Jaguar',  value: 4 },
+  ];
+
+  const carOwned = [
+    { label: 'LBG owned', value: 1 },
+    { label: 'Third party',  value: 2  },
+  ];
+
   return (
-    <Dialog onClose={handleClose} open={open} maxWidth='md' fullWidth>
+    <Dialog onClose={handleClose} open={open} maxWidth='md' fullWidth sx={{ margin: '15px' }}>
       <DialogTitle>Filters</DialogTitle>
       <h4>Price range per mile (£)</h4>
       <Slider defaultValue={50} min={10} aria-label="Default" valueLabelDisplay="auto" />
+      <Grid>
+        <h4>Type of vehicle</h4>
+        <Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          options={carKind}
+          renderInput={(params) => <TextField {...params} />}
+          defaultValue='Electric car'
+        />
+      </Grid>
+      <Grid>
+       <h4> Ownership Type </h4>
+        <Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          options={carOwned}
+          renderInput={(params) => <TextField {...params} />}
+          defaultValue='LBG Owned'
+        />
+      </Grid>
+      <Grid>
+        <h4> vehicle Category </h4>
+        <Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          options={carPurpose}
+          renderInput={(params) => <TextField {...params} />}
+          defaultValue='Sports car'
+        />
+      </Grid>
+      <Grid>
+        <h4> Brand </h4>
+        <Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          options={carBrand}
+          renderInput={(params) => <TextField {...params} />}
+          defaultValue='BMW'
+        />
+      </Grid>
+      <Grid>
+        <h4> Location </h4>
+        <CardMedia
+          sx={{
+            pt: '1%',
+          }}
+            component="img"
+            image="https://www.collierpickard.co.uk/wp-content/uploads/2018/07/postcodes-on-google-map-3.png"
+            alt="random"
+          />
+      </Grid>
     </Dialog>
   );
 }

@@ -22,6 +22,7 @@ const carPurpose = [
   { label: 'large family trip',  value: 2  },
   { label: 'everyday use',  value: 3 },
   { label: 'weekend use',  value: 4 },
+  { label: 'Choose for me',  value: 4 },
   { label: 'Other',  value: 4 },
 ];
 
@@ -44,7 +45,7 @@ export default function Landing() {
               }}
             >
             <Typography component="h3" variant="h4">
-              Own any car you want without the burden of owning a car.
+              Use any car you want without the burden of owning a car.
               You use it, we take care of it.
             </Typography>
             <br />
@@ -62,7 +63,7 @@ export default function Landing() {
                 id="combo-box-demo"
                 options={carPurpose}
                 renderInput={(params) => <TextField {...params} />}
-                defaultValue='everyday use'
+                defaultValue='Choose for me'
               />
 
               <Button variant="contained" color='success' sx={{ marginTop: '15px', color: '#fff' }}>

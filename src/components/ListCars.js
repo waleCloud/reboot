@@ -117,7 +117,7 @@ export default function ListCars() {
           color="text.secondary"
           component="p"
         >
-          Own any car you want without the burden of owning a car.
+          Use any car you want without the burden of owning a car.
         </Typography>
         <Copyright />
       </Box>
