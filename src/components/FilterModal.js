@@ -1,17 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-import Typography from '@mui/material/Typography';
-import { blue } from '@mui/material/colors';
-import { Autocomplete, CardMedia, FormControl, Grid, MenuItem, Select, Slider, TextField } from '@mui/material';
+import { Autocomplete, CardMedia, Grid, Slider, TextField } from '@mui/material';
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
@@ -22,9 +14,6 @@ function SimpleDialog(props) {
     onClose(selectedValue);
   };
 
-  const handleListItemClick = (value) => {
-    onClose(value);
-  };
 
   const carKind = [
     { label: 'Electric car', value: 1 },
